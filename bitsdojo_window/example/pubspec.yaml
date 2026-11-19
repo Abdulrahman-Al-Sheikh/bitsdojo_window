@@ -11,7 +11,8 @@ platforms:
   windows:
 
 environment:
-  sdk: ">=2.17.0 <4.0.0"
+  sdk: ">=3.13.0 <4.0.0"
+  flutter: ">=3.47.9"
 
 dependencies:
   flutter:
@@ -27,7 +28,7 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.1
+  cupertino_icons: ^1.0.8
 
 dev_dependencies:
   flutter_test:
@@ -39,7 +40,18 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^3.0.1
+  flutter_lints: ^6.0.0
+
+# Local monorepo resolution until 1.0.0 is published.
+dependency_overrides:
+  bitsdojo_window_platform_interface:
+    path: ../../bitsdojo_window_platform_interface
+  bitsdojo_window_windows:
+    path: ../../bitsdojo_window_windows
+  bitsdojo_window_macos:
+    path: ../../bitsdojo_window_macos
+  bitsdojo_window_linux:
+    path: ../../bitsdojo_window_linux
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

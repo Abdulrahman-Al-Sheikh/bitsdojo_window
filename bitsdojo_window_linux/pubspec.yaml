@@ -2,23 +2,30 @@ name: bitsdojo_window_linux
 description: Linux implementation of the bitsdojo_window plugin.
 version: 1.0.0
 homepage: https://www.bitsdojo.com
-repository: https://github.com/bitsdojo/bitsdojo_window
+repository: https://github.com/Abdulrahman-Al-Sheikh/bitsdojo_window
+publish_to: none
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
-  flutter: ">=3.41.0"
+  sdk: ">=3.13.0 <4.0.0"
+  flutter: ">=3.47.9"
 
 dependencies:
   flutter:
     sdk: flutter
   bitsdojo_window_platform_interface:
-    ^0.1.2
-    #path: ../bitsdojo_window_platform_interface
+    git:
+      url: https://github.com/Abdulrahman-Al-Sheikh/bitsdojo_window.git
+      path: bitsdojo_window_platform_interface
+      ref: master
   ffi: ^2.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+dependency_overrides:
+  bitsdojo_window_platform_interface:
+    path: ../bitsdojo_window_platform_interface
 
 flutter:
   plugin:

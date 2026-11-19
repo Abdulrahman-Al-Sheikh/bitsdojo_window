@@ -1,5 +1,7 @@
 library bitsdojo_window_windows;
 
+import 'dart:ffi';
+
 import 'package:win32/win32.dart';
 
 import './native_api.dart';
@@ -15,7 +17,7 @@ class BitsDojoNotInitializedException implements Exception {
 
 class WinAppWindow extends WinWindow {
   WinAppWindow._() {
-    super.handle = HWND(getAppWindow);
+    hwnd = HWND(Pointer.fromAddress(getAppWindow()));
     final isLoaded = isBitsdojoWindowLoaded();
     if (!isLoaded) {
       print(notInitializedMessage);

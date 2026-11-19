@@ -30,28 +30,18 @@ Watch the tutorial to get started. Click the image below to watch the video:
 
 # Getting Started
 
-Add the package to your project's `pubspec.yaml` file manually or using the command below:
+Until this fork is merged upstream / published to pub.dev, add the package from GitHub:
 
-```shell
-pub add bitsdojo_window
+```yaml
+dependencies:
+  bitsdojo_window:
+    git:
+      url: https://github.com/Abdulrahman-Al-Sheikh/bitsdojo_window.git
+      path: bitsdojo_window
+      ref: master
 ```
 
-The `pubspec.yaml` file should look like this:
-
-```diff
-// pubspec.yaml
-
-  ...
-
-  dependencies:
-    flutter:
-      sdk: flutter
-+ bitsdojo_window: ^0.1.6
-
-  dev_dependencies:
-
-  ...
-```
+Then run `flutter pub get`.
 
 # For Windows apps
 

@@ -22,7 +22,18 @@ Watch the tutorial to get started. Click the image below to watch the video:
 
 # Getting Started
 
-Install the package using `pubspec.yaml`
+Until this fork is merged upstream / published to pub.dev, add the package from GitHub:
+
+```yaml
+dependencies:
+  bitsdojo_window:
+    git:
+      url: https://github.com/Abdulrahman-Al-Sheikh/bitsdojo_window.git
+      path: bitsdojo_window
+      ref: master
+```
+
+Then run `flutter pub get`.
 
 # For Windows apps
 

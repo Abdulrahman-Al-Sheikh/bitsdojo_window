@@ -2,11 +2,13 @@ name: bitsdojo_window
 description: A package to help with creating custom windows with Flutter desktop (custom border, titlebar and minimize/maximize/close buttons) and common desktop window operations (show/hide/position on screen) for Windows and macOS
 version: 1.0.0
 homepage: https://www.bitsdojo.com
-repository: https://github.com/bitsdojo/bitsdojo_window
+repository: https://github.com/Abdulrahman-Al-Sheikh/bitsdojo_window
+# Hosted on GitHub until upstream PR is merged / published to pub.dev.
+publish_to: none
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
-  flutter: ">=3.41.0"
+  sdk: ">=3.13.0 <4.0.0"
+  flutter: ">=3.47.9"
 
 flutter:
   plugin:
@@ -22,14 +24,33 @@ dependencies:
   flutter:
     sdk: flutter
   bitsdojo_window_platform_interface:
-    ^0.1.2
-    #path: ../bitsdojo_window_platform_interface
+    git:
+      url: https://github.com/Abdulrahman-Al-Sheikh/bitsdojo_window.git
+      path: bitsdojo_window_platform_interface
+      ref: master
   bitsdojo_window_windows:
-    ^0.1.6
-    #path: ../bitsdojo_window_windows
+    git:
+      url: https://github.com/Abdulrahman-Al-Sheikh/bitsdojo_window.git
+      path: bitsdojo_window_windows
+      ref: master
   bitsdojo_window_macos:
-    ^0.1.4
-    #path: ../bitsdojo_window_macos
+    git:
+      url: https://github.com/Abdulrahman-Al-Sheikh/bitsdojo_window.git
+      path: bitsdojo_window_macos
+      ref: master
   bitsdojo_window_linux:
-    ^0.1.4
-    #path: ../bitsdojo_window_linux
+    git:
+      url: https://github.com/Abdulrahman-Al-Sheikh/bitsdojo_window.git
+      path: bitsdojo_window_linux
+      ref: master
+
+# Prefer local packages while developing in this monorepo.
+dependency_overrides:
+  bitsdojo_window_platform_interface:
+    path: ../bitsdojo_window_platform_interface
+  bitsdojo_window_windows:
+    path: ../bitsdojo_window_windows
+  bitsdojo_window_macos:
+    path: ../bitsdojo_window_macos
+  bitsdojo_window_linux:
+    path: ../bitsdojo_window_linux
